@@ -8,9 +8,7 @@
 
     {{-- Load CSS --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-    {{-- Load Fonts --}}
-
+    
     {{-- Inject dynamic theme colors --}}
     @php
         $theme = auth()->check() ? auth()->user()->themeSetting : null;
@@ -32,7 +30,7 @@
     </header>
 
     {{-- Main Content --}}
-    <main class="container">
+    <main>
         @yield('content')
     </main>
 </body>
