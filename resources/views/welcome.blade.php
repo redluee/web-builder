@@ -1,2 +1,2 @@
-@include('layouts.app'
-)
+@include('layouts.app')
+@include('layouts.navigation')

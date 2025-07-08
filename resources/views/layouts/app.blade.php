@@ -24,11 +24,6 @@
 
 <body>
 
-    {{-- Header --}}
-    <header>
-        <h1>@yield('header', 'Hello')</h1>
-    </header>
-
     {{-- Main Content --}}
     <main>
         @yield('content')
