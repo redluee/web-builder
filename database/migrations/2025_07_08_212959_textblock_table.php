@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('textblock', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable()->unique();
+            $table->string('name')->nullable()->unique();
             $table->text('content')->nullable();
             $table->timestamps();
         });
