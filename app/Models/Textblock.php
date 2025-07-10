@@ -12,7 +12,7 @@ class Textblock extends Model
     protected $table = 'textblock';
 
     protected $fillable = [
-        'title',
+        'name',
         'content',
     ];
 

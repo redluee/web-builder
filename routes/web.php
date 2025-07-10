@@ -1,11 +1,11 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Use the WelcomeController for the home page
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 
 // Public pages
 Route::view('/products', 'products.index')->name('products');

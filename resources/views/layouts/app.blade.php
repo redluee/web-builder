@@ -8,16 +8,16 @@
 
     {{-- Load CSS --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    
-    {{-- Inject dynamic theme colors --}}
+
+    {{-- Inject dynamic theme colors from the database --}}
     @php
-        $theme = auth()->check() ? auth()->user()->themeSetting : null;
+        $colors = \App\Models\Color::pluck('hex_code', 'variable_name');
     @endphp
     <style>
         :root {
-            --primary-color: {{ $theme->primary_color ?? '#000000' }};
-            --secondary-color: {{ $theme->secondary_color ?? '#ffffff' }};
-            --background-color: {{ $theme->background_color ?? '#f8fafc' }};
+            --primary-color: {{ $colors['primary_color'] ?? '#000000' }};
+            --secondary-color: {{ $colors['secondary_color'] ?? '#ffffff' }};
+            --background-color: {{ $colors['background_color'] ?? '#f8fafc' }};
         }
     </style>
 </head>
