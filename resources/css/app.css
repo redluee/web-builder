@@ -5,9 +5,10 @@
 body {
     margin: 0;
     padding: 0;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-family: system-ui, sans-serif;
     font-family: var(--font-sans);
+    background-color: var(--background-color) !important;
 }
 
 header {
