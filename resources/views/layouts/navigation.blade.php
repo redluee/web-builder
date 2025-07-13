@@ -10,14 +10,16 @@
     </button>
     <ul id="nav-menu" class="hidden md:flex space-x-6">
         @auth
-            <li><a href="{{ url('/dashboard') }}" class="hover:underline text-[var(--secondary-color,#fff)]">Dashboard</a></li>
-            <li><a href="{{ url('/profile') }}" class="hover:underline text-[var(--secondary-color,#fff)]">Profile</a></li>
+            <li><a href="{{ url('/dashboard') }}" class="hover:underline text-[var(#aaa]">Dashboard</a></li>
+            <li><a href="{{ url('/profile') }}" class="hover:underline text-[#aaa]">Profile</a></li>
             <li>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <button type="submit" class="hover:underline bg-transparent border-none cursor-pointer text-[var(--secondary-color,#fff)]">Logout</button>
+                    <button type="submit" class="hover:underline bg-transparent border-none cursor-pointer text-[#aaa]">Logout</button>
                 </form>
             </li>
+            <div
+    class="inline-block w-0.5 self-stretch bg-[#aaa] rounded-lg"></div>
         @endauth
         <li><a href="{{ url('/about') }}" class="hover:underline text-[var(--secondary-color,#fff)]">About</a></li>
         <li><a href="{{ url('/contact') }}" class="hover:underline text-[var(--secondary-color,#fff)]">Contact</a></li>

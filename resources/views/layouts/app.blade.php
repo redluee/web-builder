@@ -4,15 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'My Website')</title>
+    <title>@yield('title', $siteTitle ?? 'WebBuilder')</title>
 
     {{-- Load CSS --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    {{-- Inject dynamic theme colors from the database --}}
-    @php
-        $colors = \App\Models\Color::pluck('hex_code', 'variable_name');
-    @endphp
     <style>
         :root {
             --primary-color: {{ $colors['primary_color'] ?? '#000000' }};
@@ -23,8 +19,6 @@
 </head>
 
 <body>
-
-    {{-- Main Content --}}
     <main>
         @yield('content')
     </main>
