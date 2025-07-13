@@ -1,7 +1,7 @@
 {{-- filepath: /home/stevo/Development/web-builder/resources/views/components/color-edit-tile.blade.php --}}
-@props(['color'])
+@props(['color', 'success' => null])
 
-<form action="{{ route('colors.update', $color->id) }}" method="POST"
+<form id="color-form-{{ $color->id }}" action="{{ route('colors.update', $color->id) }}" method="POST"
     class="h-full text-black bg-white rounded-lg shadow-lg p-5 flex flex-col items-center gap-4 border border-gray-200">
     @csrf
     @method('PUT')
@@ -22,9 +22,9 @@
         <button type="submit" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
             Save
         </button>
-        @if (session('success') && session('color_id') == $color->id)
+        @if (($success ?? false) || (session('success') && session('color_id') == $color->id))
             <div class="w-full mt-2 px-4 py-2 bg-green-100 text-green-800 rounded text-center">
-                {{ session('success') }}
+                {{ $success ?? session('success') }}
             </div>
         @endif
         @if ($errors->has('hex_code') && old('color_id') == $color->id)
