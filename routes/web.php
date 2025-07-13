@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\ColorController;
 use Illuminate\Support\Facades\Route;
 
 // Use the WelcomeController for the home page
@@ -20,6 +21,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    //color management
+    Route::get('/colors', [ColorController::class, 'index'])->name('colors.index');
+    Route::put('/colors/{color}', [ColorController::class, 'update'])->name('colors.update');
 });
 
 require __DIR__.'/auth.php';
