@@ -17,6 +17,14 @@ class Image extends Model
         'alt_text',
     ];
 
+    /**
+     * Get the route key for the model.
+     */
+    public function getRouteKeyName()
+    {
+        return 'id';
+    }
+
     public function pages()
     {
         return $this->belongsToMany(Page::class, 'page_images')->withTimestamps()->withPivot('order');

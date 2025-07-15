@@ -1,4 +1,3 @@
-{{-- filepath: /home/stevo/Development/web-builder/resources/views/components/color-edit-tile.blade.php --}}
 @props(['color', 'success' => null])
 
 <form id="color-form-{{ $color->id }}" action="{{ route('colors.update', $color->id) }}" method="POST"

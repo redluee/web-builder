@@ -16,7 +16,7 @@
 
 {{-- dashboard tiles --}}
 <div class="max-w-6xl mx-auto p-6 h-[50vh]">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center items-center">
         <div
             onclick="window.location='{{ url('/pages') }}'"
             class="bg-[#FAF9F6] rounded-lg shadow-lg p-5 hover:shadow-2xl transition cursor-pointer transform hover:-translate-y-1 hover:bg-white"
@@ -26,8 +26,8 @@
             onkeydown="if(event.key==='Enter'){window.location='{{ url('/pages') }}'}"
         >
             <h2 class="text-xl font-semibold mb-2 text-black">Pages 📃</h2>
-            <p class="text-black">Manage your pages and content.</p>
-            <span class="text-blue-500 hover:underline mt-2 inline-block">Go to Pages</span>
+            <p class="text-black">Design and manage your pages.</p>
+            <span class="text-blue-500 hover:underline mt-2 inline-block">View Pages</span>
         </div>
         <div
             onclick="window.location='{{ url('/images') }}'"
@@ -38,7 +38,7 @@
             onkeydown="if(event.key==='Enter'){window.location='{{ url('/images') }}'}"
         >
             <h2 class="text-xl font-semibold mb-2 text-black">Images 🖼️</h2>
-            <p class="text-black">View and manage your uploaded images.</p>
+            <p class="text-black">Manage your uploaded images.</p>
             <span class="text-blue-500 hover:underline mt-2 inline-block">View Images</span>
         </div>
         <div
@@ -50,8 +50,44 @@
             onkeydown="if(event.key==='Enter'){window.location='{{ url('/colors') }}'}"
         >
             <h2 class="text-xl font-semibold mb-2 text-black">Colors 🎨</h2>
-            <p class="text-black">Customize your account colors and themes.</p>
-            <span class="text-blue-500 hover:underline mt-2 inline-block">Go to colors</span>
+            <p class="text-black">Customize global website colors.</p>
+            <span class="text-blue-500 hover:underline mt-2 inline-block">View colors</span>
+        </div>
+        <div
+            onclick="window.location='{{ url('/colors') }}'"
+            class="bg-[#FAF9F6] rounded-lg shadow-lg p-5 hover:shadow-2xl transition cursor-pointer transform hover:-translate-y-1 hover:bg-white"
+            tabindex="0"
+            role="link"
+            aria-label="Go to Settings"
+            onkeydown="if(event.key==='Enter'){window.location='{{ url('/colors') }}'}"
+        >
+            <h2 class="text-xl font-semibold mb-2 text-black">Videos 🎥</h2>
+            <p class="text-black">Manage your video library.</p>
+            <span class="text-blue-500 hover:underline mt-2 inline-block">View videos</span>
+        </div>
+        <div
+            onclick="window.location='{{ url('/colors') }}'"
+            class="bg-[#FAF9F6] rounded-lg shadow-lg p-5 hover:shadow-2xl transition cursor-pointer transform hover:-translate-y-1 hover:bg-white"
+            tabindex="0"
+            role="link"
+            aria-label="Go to Settings"
+            onkeydown="if(event.key==='Enter'){window.location='{{ url('/colors') }}'}"
+        >
+            <h2 class="text-xl font-semibold mb-2 text-black">Products 🎨</h2>
+            <p class="text-black">Manage your products.</p>
+            <span class="text-blue-500 hover:underline mt-2 inline-block">View products</span>
+        </div>
+        <div
+            onclick="window.location='{{ url('/colors') }}'"
+            class="bg-[#FAF9F6] rounded-lg shadow-lg p-5 hover:shadow-2xl transition cursor-pointer transform hover:-translate-y-1 hover:bg-white"
+            tabindex="0"
+            role="link"
+            aria-label="Go to Settings"
+            onkeydown="if(event.key==='Enter'){window.location='{{ url('/colors') }}'}"
+        >
+            <h2 class="text-xl font-semibold mb-2 text-black">Navigation menu 🧭</h2>
+            <p class="text-black">Reorder and edit the navigation menu.</p>
+            <span class="text-blue-500 hover:underline mt-2 inline-block">Manage navigation</span>
         </div>
     </div>
 </div>
