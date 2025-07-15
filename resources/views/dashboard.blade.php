@@ -54,12 +54,12 @@
             <span class="text-blue-500 hover:underline mt-2 inline-block">View colors</span>
         </div>
         <div
-            onclick="window.location='{{ url('/colors') }}'"
+            onclick="window.location='{{ url('/videos') }}'"
             class="bg-[#FAF9F6] rounded-lg shadow-lg p-5 hover:shadow-2xl transition cursor-pointer transform hover:-translate-y-1 hover:bg-white"
             tabindex="0"
             role="link"
-            aria-label="Go to Settings"
-            onkeydown="if(event.key==='Enter'){window.location='{{ url('/colors') }}'}"
+            aria-label="Go to videos"
+            onkeydown="if(event.key==='Enter'){window.location='{{ url('/videos') }}'}"
         >
             <h2 class="text-xl font-semibold mb-2 text-black">Videos 🎥</h2>
             <p class="text-black">Manage your video library.</p>

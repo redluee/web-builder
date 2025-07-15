@@ -32,7 +32,6 @@
     <ul id="nav-menu" class="hidden md:flex space-x-6">
         @auth
             <li><a href="{{ url('/dashboard') }}" class="hover:underline text-[#aaa]">Dashboard</a></li>
-            <li><a href="{{ url('/profile') }}" class="hover:underline text-[#aaa]">Profile</a></li>
             <li>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
