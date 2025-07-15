@@ -38,8 +38,27 @@ Route::middleware('auth')->group(function () {
     })->name('images.create');
     Route::get('/images/{image}', [ImageController::class,'show'])->name('images.edit');
     Route::put('/images/{image}', [ImageController::class, 'update'])->name('images.update');
-    Route::post('/images', [ImageController::class, 'store'])->name('images.store');
     Route::delete('/images/{image}', [ImageController::class, 'destroy'])->name('images.destroy');
+    Route::post('/images', [ImageController::class, 'store'])->name('images.store');
+
+    //page management
+    Route::get('/pages', [PageController::class, 'index'])->name('pages.index');
+
+    //video management
+    Route::get('/videos', [VideoController::class, 'index'])->name('videos.index');
+    Route::get('/videos/{video}', [VideoController::class, 'create'])->name('videos.edit');
+    Route::put('/videos/{video}', [VideoController::class, 'update'])->name('videos.update');
+    Route::delete('/videos/{video}', [VideoController::class, 'destroy'])->name('videos.destroy');
+    Route::get('/videos/create', function() {
+        return view('video.create');
+    })->name('videos.create');
+    Route::post('/videos', [VideoController::class, 'store'])->name('videos.store');
+
+    //navigation management
+    Route::get('/navigation', [NavigationController::class, 'index'])->name('navigation.index');
+    Route::put('/navigation/update', [NavigationController::class,'update'])->name('navigation.update');
+
+
 });
 
 require __DIR__.'/auth.php';
