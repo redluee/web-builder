@@ -25,4 +25,17 @@ class Page extends Model
     {
         return $this->belongsToMany(Textblock::class, 'page_textblocks')->withTimestamps()->withPivot('order');
     }
+
+    public function elements()
+    {
+        return $this->belongsToMany(Element::class, 'page_elements')
+            ->withPivot('sort_order', 'settings')
+            ->orderBy('pivot_sort_order')
+            ->withTimestamps();
+    }
+
+    public function pageElements()
+    {
+        return $this->hasMany(PageElement::class);
+    }
 }
