@@ -27,7 +27,7 @@
         >
             <h2 class="text-xl font-semibold mb-2 text-black">Pages 📃</h2>
             <p class="text-black">Design and manage your pages.</p>
-            <span class="text-blue-500 hover:underline mt-2 inline-block">View Pages</span>
+            <span class="font-bold text-green-500 hover:underline mt-2 inline-block">View Pages</span>
         </div>
         <div
             onclick="window.location='{{ url('/images') }}'"
@@ -39,7 +39,7 @@
         >
             <h2 class="text-xl font-semibold mb-2 text-black">Images 🖼️</h2>
             <p class="text-black">Manage your uploaded images.</p>
-            <span class="text-blue-500 hover:underline mt-2 inline-block">View Images</span>
+            <span class="font-bold text-blue-500 hover:underline mt-2 inline-block">View Images</span>
         </div>
         <div
             onclick="window.location='{{ url('/colors') }}'"
@@ -51,7 +51,7 @@
         >
             <h2 class="text-xl font-semibold mb-2 text-black">Colors 🎨</h2>
             <p class="text-black">Customize global website colors.</p>
-            <span class="text-blue-500 hover:underline mt-2 inline-block">View colors</span>
+            <span class="font-bold text-cyan-500 hover:underline mt-2 inline-block">View colors</span>
         </div>
         <div
             onclick="window.location='{{ url('/videos') }}'"
@@ -63,7 +63,7 @@
         >
             <h2 class="text-xl font-semibold mb-2 text-black">Videos 🎥</h2>
             <p class="text-black">Manage your video library.</p>
-            <span class="text-blue-500 hover:underline mt-2 inline-block">View videos</span>
+            <span class="font-bold text-red-500 hover:underline mt-2 inline-block">View videos</span>
         </div>
         <div
             onclick="window.location='{{ url('/colors') }}'"
@@ -75,7 +75,7 @@
         >
             <h2 class="text-xl font-semibold mb-2 text-black">Products 🎨</h2>
             <p class="text-black">Manage your products.</p>
-            <span class="text-blue-500 hover:underline mt-2 inline-block">View products</span>
+            <span class="font-bold text-purple-500 hover:underline mt-2 inline-block">View products</span>
         </div>
         <div
             onclick="window.location='{{ url('/colors') }}'"
@@ -87,7 +87,7 @@
         >
             <h2 class="text-xl font-semibold mb-2 text-black">Navigation menu 🧭</h2>
             <p class="text-black">Reorder and edit the navigation menu.</p>
-            <span class="text-blue-500 hover:underline mt-2 inline-block">Manage navigation</span>
+            <span class="font-bold text-orange-500 hover:underline mt-2 inline-block">Manage navigation</span>
         </div>
     </div>
 </div>

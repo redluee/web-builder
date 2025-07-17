@@ -18,7 +18,7 @@
         <input type="hidden" name="color_id" value="{{ $color->id }}">
     </div>
     <div class="flex gap-2 items-center">
-        <button type="submit" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+        <button type="submit" class="mt-2 px-4 py-2 bg-cyan-500 text-white rounded hover:bg-cyan-600 transition">
             Save
         </button>
         @if (($success ?? false) || (session('success') && session('color_id') == $color->id))

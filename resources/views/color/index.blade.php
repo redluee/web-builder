@@ -11,7 +11,7 @@
             Color Management
         </h1>
         <p class="mt-4 text-lg italic max-w-md text-center">
-            "Change the global colors of your website to match your brand or personal style."
+            Change the global colors of your website to match your brand or personal style.
         </p>
     </div>
 </div>
