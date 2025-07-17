@@ -13,10 +13,10 @@ class VideoController extends Controller
         return view('video.index', compact('videos'));
     }
 
-    public function create(Video $video)
+    public function create()
     {
-        // Show the edit form for a video (used for editing)
-        return view('video.edit', compact('video'));
+        // Show the create form for a new video
+        return view('video.create');
     }
 
     public function store(Request $request)
@@ -37,6 +37,12 @@ class VideoController extends Controller
                 ->withErrors(['error' => 'Failed to create video: ' . $e->getMessage()])
                 ->withInput();
         }
+    }
+
+    public function edit(Video $video)
+    {
+        // Show the edit form for a video
+        return view('video.edit', compact('video'));
     }
 
     public function update(Request $request, Video $video)

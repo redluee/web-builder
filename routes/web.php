@@ -46,7 +46,7 @@ Route::middleware('auth')->group(function () {
 
     //video management
     Route::get('/videos', [VideoController::class, 'index'])->name('videos.index');
-    Route::get('/videos/{video}', [VideoController::class, 'create'])->name('videos.edit');
+    Route::get('/videos/{video}/edit', [VideoController::class, 'edit'])->name('videos.edit');
     Route::put('/videos/{video}', [VideoController::class, 'update'])->name('videos.update');
     Route::delete('/videos/{video}', [VideoController::class, 'destroy'])->name('videos.destroy');
     Route::get('/videos/create', function() {

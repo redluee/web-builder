@@ -21,7 +21,7 @@
 
 {{-- banner --}}
 <div class="bg-cover bg-center h-[25vh] shadow-xl"
-    style="background-image: url('{{ asset('/storage/images/video-banner.jpg') }}');">
+    style="background-image: url('{{ asset('/storage/images/playbutton.jpeg') }}');">
     <div class="flex flex-col items-center justify-center h-full bg-black bg-opacity-60">
         <h1 class="text-5xl font-bold ">
             Videos
@@ -34,15 +34,67 @@
 
 {{-- add video --}}
 <div class="max-w-4xl mx-auto mt-10 mb-6">
-    <a href="{{ route('videos.create') }}" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+    <a href="{{ route('videos.create') }}" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition" onclick="openVideoCreateModal(event, this.href)">
         Add New Video
     </a>
 </div>
 
-<div class="max-w-4xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 items-stretch">
+<div class="max-w-6xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 items-stretch">
     @foreach($videos as $video)
         <div id="video-tile-{{ $video->id }}">
             <x-video-edit-tile :video="$video" />
         </div>
     @endforeach
 </div>
+
+{{-- Edit Modal Overlay --}}
+<div id="video-edit-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div id="video-edit-modal-content" class="bg-white rounded-lg shadow-lg p-6 max-w-lg w-full relative">
+        <button onclick="closeVideoEditModal()" class="absolute top-2 right-2 text-gray-500 hover:text-black text-2xl">&times;</button>
+        {{-- The edit form will be loaded here --}}
+    </div>
+</div>
+
+{{-- Create Modal Overlay --}}
+<div id="video-create-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div id="video-create-modal-content" class="bg-white rounded-lg shadow-lg p-6 max-w-lg w-full relative">
+        <button onclick="closeVideoCreateModal()" class="absolute top-2 right-2 text-gray-500 hover:text-black text-2xl">&times;</button>
+        {{-- The create form will be loaded here --}}
+    </div>
+</div>
+
+<script>
+function openVideoEditModal(event, url) {
+    event.preventDefault();
+    fetch(url)
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('video-edit-modal-content').innerHTML =
+                '<button onclick="closeVideoEditModal()" class="absolute top-2 right-4 w-4 h-4 text-gray-500 hover:text-black text-2xl">&times;</button>' +
+                html;
+            document.getElementById('video-edit-modal').classList.remove('hidden');
+        });
+}
+
+function closeVideoEditModal() {
+    document.getElementById('video-edit-modal').classList.add('hidden');
+    document.getElementById('video-edit-modal-content').innerHTML = '';
+}
+
+function openVideoCreateModal(event, url) {
+    event.preventDefault();
+    fetch(url)
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('video-create-modal-content').innerHTML =
+                '<button onclick="closeVideoCreateModal()" class="absolute top-2 right-4 w-4 h-4 text-gray-500 hover:text-black text-2xl">&times;</button>' +
+                html;
+            document.getElementById('video-create-modal').classList.remove('hidden');
+        });
+}
+
+function closeVideoCreateModal() {
+    document.getElementById('video-create-modal').classList.add('hidden');
+    document.getElementById('video-create-modal-content').innerHTML = '';
+}
+</script>
