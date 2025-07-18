@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('page_id')->constrained('page')->onDelete('cascade');
             $table->foreignId('element_id')->constrained('element')->onDelete('cascade');
             $table->integer('sort_order');
-            $table->json('settings');
+            $table->json('settings')->nullable();
             $table->timestamps();
 
             $table->unique(['page_id', 'sort_order']);

@@ -14,7 +14,6 @@ class Element extends Model
     protected $fillable = [
         'name',
         'view_path',
-        'label',
         'settings',
     ];
 

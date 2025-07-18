@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\PageElement;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -23,9 +24,12 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             PageSeeder::class,
+            ElementSeeder::class,
             ColorSeeder::class,
             ImageSeeder::class,
             TextblockSeeder::class,
+            SettingSeeder::class,
+            PageElementSeeder::class,
         ]);
     }
 }

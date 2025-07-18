@@ -2,7 +2,7 @@
 <nav
     class="bg-[var(--primary-color,#000)] text-[var(--secondary-color,#fff)] px-4 py-3 flex items-center justify-between">
     <div class="text-lg font-bold flex items-center gap-2">
-        <a href="{{ url('/') }}"
+        <a href="{{ url('/welcome') }}"
             class="hover:underline text-[var(--secondary-color,#fff)]">{{ config('app.name', 'web-builder') }}</a>
 
         @auth

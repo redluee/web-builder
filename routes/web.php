@@ -7,16 +7,14 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\NavigationController;
 use App\Http\Controllers\VideoController;
-use App\Http\Controllers\SettingController;
+// use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 
 // Use the WelcomeController for the home page
-Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+// Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 
 // Public pages
-Route::view('/products', 'products.index')->name('products');
-Route::view('/contact', 'contact.index')->name('contact');
-Route::view('/about', 'about.index')->name('about');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -62,8 +60,14 @@ Route::middleware('auth')->group(function () {
     //navigation management
     Route::get('/navigation', [NavigationController::class, 'index'])->name('navigation.index');
     Route::put('/navigation/update', [NavigationController::class,'update'])->name('navigation.update');
-
-
 });
+
+
+Route::get('/', function () {
+    $page = \App\Models\Page::where('slug', 'welcome')->firstOrFail();
+    return view('page', compact('page'));
+});
+
+Route::get('/{slug}', [PageController::class, 'show'])->name('page.show');
 
 require __DIR__.'/auth.php';

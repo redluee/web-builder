@@ -1,6 +1,6 @@
 @props([
     // Your JSON keys with defaults:
-    'image_url'        => asset('defaults/banner.jpg'),
+    'image_url'        => asset('storage/images/Sao-Paulo-Leaf.jpg'),
     'heading'          => 'Welcome to Our Website',
     'subheading'       => 'Explore our features and services.',
     'overlay_color'    => 'black',

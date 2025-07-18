@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string("name");
             $table->string("view_path");
-            $table->string("label")->nullable();
             $table->json("settings")->nullable(); //stores additional settings for the element with default values
             $table->timestamps();
         });

@@ -9,11 +9,11 @@ class PageController extends Controller
 {
     public function index()
     {
-        $pages = Page::orderBy("created_at","desc")->paginate(10);
+        $pages = Page::orderBy("created_at", "desc")->paginate(10);
 
         return view('page.index', compact('pages'));
     }
-    
+
     public function create()
     {
         return view('page.create');
@@ -73,5 +73,14 @@ class PageController extends Controller
             return redirect()->back()
                 ->withErrors(['error' => 'Failed to delete page: ' . $e->getMessage()]);
         }
+    }
+
+    
+    public function show(string $slug)
+    {
+        $page = Page::where('slug', $slug)
+            ->firstOrFail();
+
+        return view('page', compact('page'));
     }
 }
