@@ -62,6 +62,7 @@ Route::middleware('auth')->group(function () {
     Route::put('/navigation/update', [NavigationController::class,'update'])->name('navigation.update');
 });
 
+require __DIR__.'/auth.php';
 
 Route::get('/', function () {
     $page = \App\Models\Page::where('slug', 'welcome')->firstOrFail();
@@ -70,4 +71,3 @@ Route::get('/', function () {
 
 Route::get('/{slug}', [PageController::class, 'show'])->name('page.show');
 
-require __DIR__.'/auth.php';
