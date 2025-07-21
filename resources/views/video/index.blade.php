@@ -1,5 +1,4 @@
 @include('layouts.app')
-@include('layouts.navigation')
 
 @php
     $videos = $videos ?? [];

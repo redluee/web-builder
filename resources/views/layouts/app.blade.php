@@ -19,6 +19,8 @@
 </head>
 
 <body>
+    @include('layouts.navigation')
+
     <main>
         @yield('content')
     </main>

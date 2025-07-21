@@ -1,5 +1,4 @@
 @include('layouts.app')
-@include('layouts.navigation')
 
 {{-- dashboard banner --}}
 <div class="bg-cover bg-center h-[25vh] shadow-xl"
