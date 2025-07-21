@@ -29,22 +29,46 @@ class ElementSeeder extends Seeder
             [
                 'name' => 'Text Block',
                 'view_path' => 'components.text-block',
-                'settings' => null,
+                'settings' => json_encode([
+                    'heading' => 'About Us',
+                    'body' => 'We are passionate about building dynamic websites. Our team is dedicated to providing the best solutions for your needs.',
+                    'text_color_class' => '#ffffff',
+                    'bg_color_class' => '#111111',
+                ]),
             ],
             [
                 'name' => 'Image Gallery',
                 'view_path' => 'components.image-gallery',
-                'settings' => null,
+                'settings' => json_encode([
+                    'images' => [
+                        '/storage/images/gallery1.jpg',
+                        '/storage/images/gallery2.jpg',
+                        '/storage/images/gallery3.jpg',
+                    ],
+                    'columns' => 3,
+                ]),
             ],
             [
                 'name' => 'Image carousel',
                 'view_path' => 'components.image-carousel',
-                'settings' => null,
+                'settings' => json_encode([
+                    'images' => [
+                        '/storage/images/carousel1.jpg',
+                        '/storage/images/carousel2.jpg',
+                        '/storage/images/carousel3.jpg',
+                    ],
+                    'height_class' => 'h-64',
+                ]),
             ],
             [
                 'name' => 'Contact Card',
                 'view_path' => 'components.contact-card',
-                'settings' => null,
+                'settings' => json_encode([
+                    'name' => 'Jane Doe',
+                    'email' => 'jane@example.com',
+                    'phone' => '+1 555-123-4567',
+                    'avatar_url' => '/storage/images/avatar-jane.jpg',
+                ]),
             ],
         ]);
     }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Page;
+use App\Models\Element;
+use App\Models\PageElement;
 
 class PageController extends Controller
 {
@@ -82,5 +84,44 @@ class PageController extends Controller
             ->firstOrFail();
 
         return view('page', compact('page'));
+    }
+
+    public function editContent(Page $page)
+    {
+        $elements = $page->elements()->orderBy('pivot_sort_order')->get();
+        $availableElements = Element::all();
+        return view('page.edit-content', compact('page', 'elements', 'availableElements'));
+    }
+
+    public function addElement(Request $request, Page $page)
+    {
+        $validated = $request->validate([
+            'element_id' => 'required|exists:element,id',
+            'settings' => 'nullable|array',
+        ]);
+        $sortOrder = $page->elements()->count() + 1;
+        $page->elements()->attach($validated['element_id'], [
+            'sort_order' => $sortOrder,
+            'settings' => json_encode($validated['settings'] ?? []),
+        ]);
+        return redirect()->route('pages.editContent', $page->id)->with('success', 'Element added!');
+    }
+
+    public function removeElement(Page $page, $elementId)
+    {
+        $page->elements()->detach($elementId);
+        return redirect()->route('pages.editContent', $page->id)->with('success', 'Element removed!');
+    }
+
+    public function updateElementOrder(Request $request, Page $page)
+    {
+        $validated = $request->validate([
+            'order' => 'required|array',
+            'order.*' => 'exists:element,id',
+        ]);
+        foreach ($validated['order'] as $index => $elementId) {
+            $page->elements()->updateExistingPivot($elementId, ['sort_order' => $index + 1]);
+        }
+        return response()->json(['success' => true]);
     }
 }

@@ -46,6 +46,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/pages/{page}/edit', [PageController::class, 'edit'])->name('pages.edit');
     Route::put('/pages/{page}', [PageController::class, 'update'])->name('pages.update');
     Route::delete('/pages/{page}', [PageController::class, 'destroy'])->name('pages.destroy');
+    //page content management
+    Route::get('/pages/{page}/edit-content', [PageController::class, 'editContent'])->name('pages.editContent');
+    Route::post('/pages/{page}/elements', [PageController::class, 'addElement'])->name('pages.addElement');
+    Route::delete('/pages/{page}/elements/{element}', [PageController::class, 'removeElement'])->name('pages.removeElement');
+    Route::put('/pages/{page}/elements/order', [PageController::class, 'updateElementOrder'])->name('pages.updateElementOrder');
 
     //video management
     Route::get('/videos', [VideoController::class, 'index'])->name('videos.index');

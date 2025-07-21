@@ -13,11 +13,11 @@
      style="background-image: url('{{ $image_url }}');">
     <div class="flex flex-col items-center justify-center h-full
                 bg-{{ $overlay_color }} bg-opacity-{{ $overlay_opacity }}">
-        <h1 class="text-5xl font-bold {{ $text_color_class }}">
+        <h1 class="text-5xl font-bold m-4 {{ $text_color_class }}">
             {{ $heading }}
         </h1>
         <p class="mt-4 text-lg italic max-w-md text-center {{ $text_color_class }}">
-            {{ $subheading }}
+            "{{ $subheading }}"
         </p>
     </div>
 </div>
