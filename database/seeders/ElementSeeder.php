@@ -41,9 +41,9 @@ class ElementSeeder extends Seeder
                 'view_path' => 'components.image-gallery',
                 'settings' => json_encode([
                     'images' => [
-                        '/storage/images/gallery1.jpg',
-                        '/storage/images/gallery2.jpg',
-                        '/storage/images/gallery3.jpg',
+                        '/storage/images/Blueprint.jpg',
+                        '/storage/images/color-banner.jpg',
+                        '/storage/images/playbutton.jpeg',
                     ],
                     'columns' => 3,
                 ]),
@@ -53,9 +53,9 @@ class ElementSeeder extends Seeder
                 'view_path' => 'components.image-carousel',
                 'settings' => json_encode([
                     'images' => [
-                        '/storage/images/carousel1.jpg',
-                        '/storage/images/carousel2.jpg',
-                        '/storage/images/carousel3.jpg',
+                        '/storage/images/Blueprint.jpg',
+                        '/storage/images/color-banner.jpg',
+                        '/storage/images/playbutton.jpeg',
                     ],
                     'height_class' => 'h-64',
                 ]),

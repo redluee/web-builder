@@ -10,7 +10,7 @@
             class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition text-sm my-auto">
             Edit slug
         </a>
-        <a href="{{ route('pages.edit', $page->id) }}" onclick="openPageEditModal(event, this.href)"
+        <a href="{{ route('pages.editContent', $page->id) }}"
             class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition text-sm my-auto">
             Edit content
         </a>
