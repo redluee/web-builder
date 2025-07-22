@@ -30,8 +30,8 @@ class ElementSeeder extends Seeder
                 'name' => 'Text Block',
                 'view_path' => 'components.text-block',
                 'settings' => json_encode([
-                    'heading' => 'About Us',
-                    'body' => 'We are passionate about building dynamic websites. Our team is dedicated to providing the best solutions for your needs.',
+                    'heading' => 'Lorum ipsum',
+                    'body' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec turpis at libero vestibulum viverra non at mauris. Maecenas aliquet, nulla in sagittis semper, felis ligula dapibus justo, vitae consectetur justo arcu et odio. Proin dapibus nisl quam, id blandit massa consectetur sed. Sed venenatis orci eget feugiat consectetur. Proin aliquet ultricies elit, sed scelerisque arcu finibus finibus. Suspendisse potenti. Sed in ligula nec enim facilisis tincidunt. Integer ac dolor non quam aliquet facilisis. Donec vel felis at erat commodo eleifend.',
                     'text_color_class' => '#ffffff',
                     'bg_color_class' => '#111111',
                 ]),
@@ -64,10 +64,30 @@ class ElementSeeder extends Seeder
                 'name' => 'Contact Card',
                 'view_path' => 'components.contact-card',
                 'settings' => json_encode([
-                    'name' => 'Jane Doe',
-                    'email' => 'jane@example.com',
-                    'phone' => '+1 555-123-4567',
-                    'avatar_url' => '/storage/images/avatar-jane.jpg',
+                    'name' => 'Steven Heijn',
+                    'email' => 'info@stevenheijn.nl',
+                    'phone' => '+31 6 12345678',
+                    'avatar_url' => '/storage/images/Profile.jpg',
+                    'bg_color_class' => '#18181a',
+                ]),
+            ],
+            [
+                'name' => 'Video',
+                'view_path' => 'components.video',
+                'settings' => json_encode([
+                    'video_url' => 'https://youtu.be/YHS8AYSwW34',
+                    'height_class' => 'h-64',
+                    'autoplay' => false,
+                ]),
+            ],
+            [
+                'name' => 'line',
+                'view_path' => 'components.line',
+                'settings' => json_encode([
+                    'height' => '2px',
+                    'bg_color_class' => '#2e3132',
+                    'width' => '80%',
+                    'style-type' => 'solid',
                 ]),
             ],
         ]);

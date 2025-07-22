@@ -7,7 +7,7 @@
     'columns' => 3,
 ])
 
-<div class="grid gap-4 max-w-6xl mx-auto" style="grid-template-columns: repeat({{ $columns }}, minmax(0, 1fr));">
+<div class="grid gap-4 max-w-6xl mx-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-{{ $columns }}">
     @foreach($imagee as $img)
         <img src="{{ $img }}" class="rounded shadow" alt="Gallery image">
     @endforeach

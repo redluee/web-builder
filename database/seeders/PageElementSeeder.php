@@ -34,6 +34,21 @@ class PageElementSeeder extends Seeder
                 'element_id' => 4, // Image Carousel element
                 'sort_order' => 4,
             ],
+            [
+                'page_id' => 1,
+                'element_id' => 5, // contact card element
+                'sort_order' => 5,
+            ],
+            [
+                'page_id' => 1,
+                'element_id' => 6, // video element
+                'sort_order' => 6,
+            ],
+            [
+                'page_id' => 1,
+                'element_id' => 7, // line element
+                'sort_order' => 7,
+            ],
         ];
 
         foreach ($elements as $element) {
