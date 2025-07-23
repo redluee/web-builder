@@ -9,7 +9,7 @@
     ]),
 ])
 
-<div class="flex items-center justify-center m-4">
+<div class="flex items-center justify-center m-16">
     <div
         class="border-0"
         style="

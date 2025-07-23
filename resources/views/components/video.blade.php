@@ -25,7 +25,7 @@
     }
 @endphp
 
-<div class="flex items-center justify-center max-w-4xl mx-auto h-96 rounded-lg overflow-hidden shadow-lg">
+<div class="flex items-center justify-center max-w-4xl mx-auto h-96 rounded-lg overflow-hidden shadow-lg m-4">
     <iframe
         class="w-full h-full rounded"
         src="{{ $embedUrl }}"

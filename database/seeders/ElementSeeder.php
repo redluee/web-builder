@@ -90,6 +90,20 @@ class ElementSeeder extends Seeder
                     'style-type' => 'solid',
                 ]),
             ],
+            [
+                'name'=> 'space',
+                'view_path' => 'components.space',
+                'settings' => json_encode([
+                    'height' => '16px',
+                ]),
+            ],
+            [
+                'name'=> 'custom html',
+                'view_path' => 'components.custom-html',
+                'settings' => json_encode([
+                    'html' => '<p>This is a custom HTML block.</p>',
+                ]),
+            ]
         ]);
     }
 }

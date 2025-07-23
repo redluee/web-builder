@@ -6,9 +6,9 @@
     'bg_color_class' => '#18181a', 
 ])
 
-<div class="flex items-center justify-center gap-8 p-4 rounded max-w-4xl mx-auto" style="background-color: {{ $bg_color_class }};">
+<div class="flex items-center justify-center gap-8 rounded m-4 max-w-4xl mx-auto" style="background-color: {{ $bg_color_class }};">
     @if($avatar_url)
-        <img src="{{ $avatar_url }}" class="w-64 h-64 rounded-full object-cover object-top mt-6" alt="Avatar">
+        <img src="{{ $avatar_url }}" class="w-64 h-64 rounded-full object-cover object-top" alt="Avatar">
     @endif
 
     <div class="border-l-2 border-gray-300 h-24"></div>
