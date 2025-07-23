@@ -54,11 +54,6 @@ class PageElementSeeder extends Seeder
                 'element_id' => 8, // space element
                 'sort_order' => 8,
             ],
-            [
-                'page_id' => 1,
-                'element_id' => 9, // custom HTML element
-                'sort_order' => 9,
-            ],
         ];
 
         foreach ($elements as $element) {

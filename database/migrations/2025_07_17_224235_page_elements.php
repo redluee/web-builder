@@ -14,13 +14,16 @@ return new class extends Migration
     {
         Schema::create('page_elements', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('page_id')->constrained('page')->onDelete('cascade');
-            $table->foreignId('element_id')->constrained('element')->onDelete('cascade');
+            $table->unsignedBigInteger('page_id');
+            $table->unsignedBigInteger('element_id');
             $table->integer('sort_order');
             $table->json('settings')->nullable();
             $table->timestamps();
 
             $table->unique(['page_id', 'sort_order']);
+
+            $table->foreign('page_id')->references('id')->on('page')->onDelete('cascade');
+            $table->foreign('element_id')->references('id')->on('element')->onDelete('cascade');
         });
     }
 
