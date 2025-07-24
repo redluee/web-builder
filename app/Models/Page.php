@@ -29,8 +29,8 @@ class Page extends Model
     public function elements()
     {
         return $this->belongsToMany(Element::class, 'page_elements')
-            ->withPivot('sort_order', 'settings')
-            ->orderBy('pivot_sort_order')
+            ->withPivot('id', 'sort_order', 'settings')
+            ->orderBy('page_elements.sort_order')
             ->withTimestamps();
     }
 

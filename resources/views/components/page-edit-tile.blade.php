@@ -1,3 +1,4 @@
+
 <div class="bg-white rounded-lg shadow-lg p-5 flex items-start border border-gray-200 gap-2">
 
     <div class="flex flex-col items-start mr-auto gap-2">
