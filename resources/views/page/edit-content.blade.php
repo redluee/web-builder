@@ -1,9 +1,8 @@
 @include('layouts.app')
 
-    <div class="flex flex-row gap-8 max-w-7xl mx-auto">
+    <div class="flex flex-row mx-auto">
         <!-- Main Preview Area -->
-        <div class="flex-1 pr-8 border-r">
-            <h1 class="mb-4">Live Preview</h1>
+        <div class="flex-1 border-r-4">
             @foreach ($page->elements as $element)
                 @php
                     $view = $element->view_path ?? null;
@@ -23,9 +22,7 @@
         </div>
 
         <!-- Sidebar Editing Form -->
-        <div class="w-96 pl-8">
-            <h2>Edit Content for: {{ $page->title }}</h2>
-
+        <div class="p-4">
             <form method="POST" action="{{ route('pages.addElement', $page->id) }}" class="mb-6">
                 @csrf
                 <select name="element_id" required class="text-black">
@@ -36,10 +33,9 @@
                 <button type="submit" class="btn btn-primary">Add Element</button>
             </form>
 
-            <h3>Current Elements</h3>
-            <ul id="element-list" class="m-4 rounded-xl bg-gray-800" style="user-select: none;">
+            <ul id="element-list" class=" rounded-md bg-gray-800" style="user-select: none;">
                 @foreach ($elements as $element)
-                <li class="p-2 flex items-center justify-between bg-gray-800 rounded-md group" data-id="{{ $element->pivot->id }}">
+                <li class="p-2 flex items-center justify-between bg-gray-800 group border-b border-black" data-id="{{ $element->pivot->id }}">
                     <div class="flex items-center gap-2">
                         <div class="flex flex-col gap-1">
                             {{-- two buttons to change the order position of the item --}}
