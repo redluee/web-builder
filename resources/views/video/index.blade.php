@@ -100,4 +100,12 @@
         document.getElementById('video-create-modal').classList.add('hidden');
         document.getElementById('video-create-modal-content').innerHTML = '';
     }
+
+    // ESC key closes modals
+    document.addEventListener('keydown', function(e) {
+        if (e.key === "Escape") {
+            closeVideoEditModal();
+            closeVideoCreateModal();
+        }
+    });
 </script>

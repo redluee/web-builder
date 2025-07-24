@@ -16,8 +16,8 @@
         <input type="text" name="title" value="{{ old('title') }}" class="w-full border rounded px-2 py-1 text-black" required>
     </div>
     <div class="mb-4">
-        <label class="block font-bold mb-1 text-black">Content</label>
-        <textarea name="content" class="w-full border rounded px-2 py-1 text-black" required>{{ old('content') }}</textarea>
+        <label class="block font-bold mb-1 text-black">Slug</label>
+        <input type="text" name="slug" value="{{ old('slug') }}" class="w-full border rounded px-2 py-1 text-black" required>
     </div>
     <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Create</button>
 </form>
