@@ -24,7 +24,7 @@ class ColorSeeder extends Seeder
 
         Color::create([
             'variable_name' => 'background_color',
-            'hex_code' => '#18181a',
+            'hex_code' => '#111111',
         ]);
     }
 }

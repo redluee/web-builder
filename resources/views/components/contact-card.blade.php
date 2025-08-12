@@ -3,10 +3,10 @@
     'email' => 'contact@example.com',
     'phone' => '123-456-7890',
     'avatar_url' => null,
-    'bg_color_class' => '#18181a', 
+    'bg_color_class' => '#111111', 
 ])
 
-<div class="flex items-center justify-center gap-8 rounded m-4 max-w-4xl mx-auto" style="background-color: {{ $bg_color_class }};">
+<div class="flex items-center justify-center gap-8 m-4 max-w-4xl mx-auto rounded-lg" style="background-color: {{ $bg_color_class }};">
     @if($avatar_url)
         <img src="{{ $avatar_url }}" class="w-64 h-64 rounded-full object-cover object-top" alt="Avatar">
     @endif

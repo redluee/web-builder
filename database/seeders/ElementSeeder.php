@@ -68,7 +68,7 @@ class ElementSeeder extends Seeder
                     'email' => 'info@stevenheijn.nl',
                     'phone' => '+31 6 12345678',
                     'avatar_url' => '/storage/images/Profile.jpg',
-                    'bg_color_class' => '#18181a',
+                    'bg_color_class' => '#111111',
                 ]),
             ],
             [
@@ -85,7 +85,7 @@ class ElementSeeder extends Seeder
                 'view_path' => 'components.line',
                 'settings' => json_encode([
                     'height' => '2px',
-                    'bg_color_class' => '#2e3132',
+                    'color_class' => '#2e3132',
                     'width' => '80%',
                     'style-type' => 'solid',
                 ]),

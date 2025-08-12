@@ -2,7 +2,7 @@
     'heading' => 'Default Heading',
     'body' => 'Default body text goes here.',
     'text_color_class' => '#ffffff',
-    'bg_color_class' => '#18181a',
+    'bg_color_class' => '#181811',
 ])
 
 <div class="p-6 rounded-lg m-4 max-w-4xl mx-auto" style="background-color: {{ $bg_color_class }};">

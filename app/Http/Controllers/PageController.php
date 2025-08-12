@@ -83,6 +83,12 @@ class PageController extends Controller
         $page = Page::where('slug', $slug)
             ->firstOrFail();
 
+        // Load pivot settings and order for rendering
+        $page->load(['elements' => function ($q) {
+            $q->withPivot('id', 'sort_order', 'settings')
+              ->orderBy('page_elements.sort_order');
+        }]);
+
         return view('page', compact('page'));
     }
 
@@ -163,5 +169,19 @@ class PageController extends Controller
             \Log::error('Failed to update element order: ' . $e->getMessage());
             return response()->json(['success' => false, 'message' => 'Failed to update element order.'], 500);
         }
+    }
+
+    public function updateElementSettings(Request $request, Page $page, $pageElementId)
+    {
+        $validated = $request->validate([
+            'settings' => 'nullable|array',
+        ]);
+
+        \DB::table('page_elements')
+            ->where('id', $pageElementId)
+            ->where('page_id', $page->id)
+            ->update(['settings' => json_encode($validated['settings'] ?? [])]);
+
+        return response()->json(['success' => true]);
     }
 }

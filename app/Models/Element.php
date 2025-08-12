@@ -11,10 +11,10 @@ class Element extends Model
 
     protected $table = 'element';
 
-    protected $fillable = [
-        'name',
-        'view_path',
-        'settings',
+    protected $fillable = ['name','view_path','settings'];
+
+    protected $casts = [
+        'settings' => 'array',
     ];
 
     public function pages()

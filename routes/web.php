@@ -51,6 +51,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/pages/{page}/elements', [PageController::class, 'addElement'])->name('pages.addElement');
     Route::delete('/pages/{page}/elements/{element}', [PageController::class, 'removeElement'])->name('pages.removeElement');
     Route::post('/pages/{page}/update-element-order', [PageController::class, 'updateElementOrder'])->name('pages.updateElementOrder');
+    Route::put('/pages/{page}/elements/{pageElement}/settings', [PageController::class, 'updateElementSettings'])->name('pages.updateElementSettings');
 
     //video management
     Route::get('/videos', [VideoController::class, 'index'])->name('videos.index');
