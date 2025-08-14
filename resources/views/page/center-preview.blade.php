@@ -25,6 +25,7 @@
                 data-page-element-id="{{ $element->pivot->id }}"
                 data-element-id="{{ $element->id }}"
                 data-element-name="{{ $element->name }}"
+                data-element-view="{{ $view ?? '' }}"
                 data-default-settings='@json($defaultSettings ?? [])'
                 data-settings='@json($pivotSettings ?? [])'
                 aria-label="Element {{ $element->name }}">

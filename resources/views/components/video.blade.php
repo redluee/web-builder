@@ -1,6 +1,7 @@
 @props([
     'name' => 'Video',
     'view_path' => 'components.video',
+    // normalized keys kept
     'settings' => [
         'video_url' => 'https://youtu.be/YHS8AYSwW34',
         'autoplay' => false,
@@ -9,7 +10,6 @@
 
 @php
     $url = $settings['video_url'];
-    // Handle youtu.be and youtube.com links
     if (preg_match('/youtu\.be\/([^\?&]+)/', $url, $matches)) {
         $videoId = $matches[1];
         $embedUrl = "https://www.youtube.com/embed/$videoId";
@@ -17,9 +17,8 @@
         $videoId = $matches[1];
         $embedUrl = "https://www.youtube.com/embed/$videoId";
     } else {
-        $embedUrl = $url; // fallback
+        $embedUrl = $url;
     }
-    // Add autoplay if needed
     if ($settings['autoplay']) {
         $embedUrl .= (str_contains($embedUrl, '?') ? '&' : '?') . 'autoplay=1&mute=1';
     }

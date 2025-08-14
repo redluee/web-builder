@@ -1,16 +1,38 @@
 @props([
-    'image' => [
+    // normalized
+    'images' => [
         '/storage/images/Blueprint.jpg',
         '/storage/images/color-banner.jpg',
         '/storage/images/playbutton.jpeg',
     ],
-    'height_class' => 'h-64',
+    'height_vh' => null,     // numeric height via slider
+    // legacy
+    'image' => null,         // old key
+    'height_class' => 'h-64' // legacy fallback
 ])
 
-<div class="relative w-full overflow-hidden max-w-6xl mx-auto m-4 {{ $height_class }} rounded-lg" id="carousel">
-    @if(count($image))
+@php
+    $imgs = is_array($images ?? null) ? $images : (is_array($image ?? null) ? $image : []);
+    // height: prefer numeric height_vh, fallback to parse from class like h-64 (~16rem) or bracketed vh
+    $heightStyle = '';
+    if (is_numeric($height_vh)) {
+        $vh = max(0, min(100, (int)$height_vh));
+        $heightStyle = "height: {$vh}vh;";
+    } elseif (is_string($height_class) && preg_match('/^h-\[(\d+)vh\]$/', $height_class, $m)) {
+        $vh = max(0, min(100, (int)$m[1]));
+        $heightStyle = "height: {$vh}vh;";
+    } else {
+        // minimal fallback: rely on provided class
+        $heightStyle = '';
+    }
+@endphp
+
+<div class="relative w-full overflow-hidden max-w-6xl mx-auto m-4 rounded-lg"
+     id="carousel"
+     style="{{ $heightStyle }}">
+    @if(count($imgs))
         <div id="carousel-track" class="flex transition-transform duration-500 w-full h-full" style="will-change: transform;">
-            @foreach($image as $img)
+            @foreach($imgs as $img)
                 <img src="{{ $img }}" class="w-full h-full object-cover flex-shrink-0" alt="Carousel image">
             @endforeach
         </div>
@@ -23,7 +45,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const images = @json($image);
+        const images = @json($imgs);
         let current = 0;
         const track = document.getElementById('carousel-track');
         const prevBtn = document.getElementById('prev-btn');
@@ -33,17 +55,16 @@
             track.style.transform = `translateX(-${idx * 100}%)`;
         }
 
-        prevBtn.addEventListener('click', function () {
+        prevBtn?.addEventListener('click', function () {
             current = (current - 1 + images.length) % images.length;
             showImage(current);
         });
 
-        nextBtn.addEventListener('click', function () {
+        nextBtn?.addEventListener('click', function () {
             current = (current + 1) % images.length;
             showImage(current);
         });
 
-        // Ensure correct initial position
         showImage(current);
     });
 </script>

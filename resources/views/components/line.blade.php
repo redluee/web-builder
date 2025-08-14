@@ -1,33 +1,40 @@
 @props([
     'name' => 'line',
     'view_path' => 'components.line',
+    // normalized defaults
     'settings' => json_encode([
         'height' => '2px',
-        'color_class' => '#2e3132',
+        'color' => '#2e3132',     // hex
         'width' => '80%',
-        'style-type' => 'solid',
+        'style_type' => 'solid',  // normalized key
     ]),
 ])
 
-{{-- Ensure $settings is an array and merge defaults --}}
 @php
+    // Ensure $settings is an array and merge defaults
     $settings = is_array($settings ?? null) ? $settings : json_decode($settings ?? '{}', true);
     $settings = array_merge([
         'height' => '2px',
-        'color_class' => '#2e3132',
+        'color' => '#2e3132',
         'width' => '80%',
-        'style-type' => 'solid',
+        'style_type' => 'solid',
     ], $settings ?? []);
+
+    // Backwards compatibility with old keys
+    $color = $settings['color'] ?? $settings['color_class'] ?? '#2e3132';
+    $styleType = $settings['style_type'] ?? $settings['style-type'] ?? 'solid';
+    $height = $settings['height'] ?? '2px';
+    $width = $settings['width'] ?? '80%';
 @endphp
 
 <div class="flex items-center justify-center m-16">
     <div
         class="border-0"
         style="
-            width: {{ $settings['width'] }};
-            height: {{ $settings['height'] }};
-            background-color: {{ $settings['color_class'] }};
-            border-style: {{ $settings['style-type'] }};
+            width: {{ $width }};
+            height: {{ $height }};
+            background-color: {{ $color }};
+            border-style: {{ $styleType }};
         "
     ></div>
 </div>
