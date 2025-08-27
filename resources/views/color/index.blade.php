@@ -5,7 +5,7 @@
 @endphp
 
 <div class="bg-cover bg-center h-[25vh] shadow-xl" style="background-image: url('{{ asset('/storage/images/color-banner.jpg') }}');">
-    <div class="flex flex-col items-center justify-center h-full bg-black bg-opacity-50">
+    <div class="flex flex-col items-center justify-center h-full bg-black bg-opacity-50 text-white">
         <h1 class="text-5xl font-bold">
             Color Management
         </h1>

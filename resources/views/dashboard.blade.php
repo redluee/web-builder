@@ -4,10 +4,10 @@
 <div class="bg-cover bg-center h-[25vh] shadow-xl"
     style="background-image: url('{{ asset('/storage/images/Blueprint.jpg') }}');">
     <div class="flex flex-col items-center justify-center h-full bg-black bg-opacity-60">
-        <h1 class="text-5xl font-bold">
+        <h1 class="text-5xl font-bold text-white">
             Dashboard
         </h1>
-        <p class="mt-4 text-lg italic max-w-lg text-center">
+        <p class="mt-4 text-lg italic max-w-lg text-center text-white">
             Welcome to your dashboard! Here you can manage your account, view statistics, and customize your settings.
         </p>
     </div>

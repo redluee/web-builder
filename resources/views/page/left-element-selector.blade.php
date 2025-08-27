@@ -1,6 +1,6 @@
 {{-- Expects: $elements (Collection of models with: id, name, view_path, settings) --}}
-<div id="left-element-selector" class="w-full h-full overflow-y-auto p-3 space-y-2">
-    <h2 class="text-sm font-semibold text-slate-700 mb-2">Elements</h2>
+<div id="left-element-selector" class="w-full h-full overflow-y-auto p-4 space-y-2">
+    <h2 class="text-lg font-semibold mb-3 text-white">Elements</h2>
 
     @forelse($elements as $element)
         @php

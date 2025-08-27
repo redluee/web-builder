@@ -47,15 +47,22 @@
 
     $containerClass = "bg-cover bg-center shadow-xl" . ($heightVh === null ? " {$height_class}" : "");
     $containerStyle = "background-image: url('{$image_url}');" . ($heightVh !== null ? " height: {$heightVh}vh;" : "");
+
+    // Sanitize helper (uses Mews Purifier if available)
+    $purifier = app()->bound('purifier') ? app('purifier') : null;
+    $cleanHtml = function ($html) use ($purifier) {
+        $html = $html ?? '';
+        return $purifier ? $purifier->clean($html) : preg_replace('/<script\b[^>]*>(.*?)<\/script>/is', '', $html);
+    };
 @endphp
 
 <div class="{{ $containerClass }}" style="{{ $containerStyle }}">
     <div class="flex flex-col items-center justify-center h-full {{ $overlayClass }}" style="{{ $overlayStyle }}">
         <h1 class="text-5xl font-bold m-4 {{ $textClass }}" style="{{ $textStyle }}">
-            {{ $heading }}
+            {!! $cleanHtml($heading) !!}
         </h1>
-        <p class="mt-4 text-lg italic max-w-md text-center {{ $textClass }}" style="{{ $textStyle }}">
-            "{{ $subheading }}"
-        </p>
+        <div class="mt-4 text-lg italic max-w-md text-center {{ $textClass }}" style="{{ $textStyle }}">
+            {!! $cleanHtml($subheading) !!}
+        </div>
     </div>
 </div>

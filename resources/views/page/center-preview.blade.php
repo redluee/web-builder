@@ -1,7 +1,7 @@
 <div class="p-4">
-    <h2 class="text-lg font-semibold mb-3">Preview</h2>
+    <h2 class="text-lg font-semibold mb-3 text-white">{{ $page->title }} preview</h2>
 
-    <ul id="page-element-list" class="space-y-4 min-h-[50vh] rounded p-1"
+    <ul id="page-element-list" class="space-y-4 min-h-[50vh] rounded p-1 relative"
         aria-label="Drop new elements here. Drag to reorder.">
         @forelse ($elements as $element)
             @php

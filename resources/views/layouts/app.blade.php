@@ -16,6 +16,9 @@
             --background-color: {{ $colors['background_color'] ?? '#f8fafc' }};
         }
     </style>
+
+    
+    <link rel="icon" type="image/x-icon" href="{{ asset('storage/images/favicon.png') }}">
 </head>
 
 <body>

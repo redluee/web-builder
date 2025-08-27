@@ -20,7 +20,6 @@ class Element extends Model
     public function pages()
     {
         return $this->belongsToMany(Page::class, 'page_elements')
-            ->withPivot('sort_order', 'settings')
-            ->withTimestamps();
+            ->withPivot('sort_order', 'settings');
     }
 }

@@ -21,7 +21,7 @@
 {{-- banner --}}
 <div class="bg-cover bg-center h-[25vh] shadow-xl"
     style="background-image: url('{{ asset('/storage/images/playbutton.jpeg') }}');">
-    <div class="flex flex-col items-center justify-center h-full bg-black bg-opacity-60">
+    <div class="flex flex-col items-center justify-center h-full bg-black bg-opacity-60 text-white">
         <h1 class="text-5xl font-bold ">
             Videos
         </h1>
